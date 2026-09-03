@@ -1,0 +1,1 @@
+# First-Local-RAG-Application-with-Foundry-Local
