@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "local-learning-coach"
+version = "1.0.0"
+description = "Foundry Local ile yerel, belge tabanlı kişisel öğrenme koçu"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "python-docx>=1.1,<2",
+  "pypdf>=5,<7",
+  "numpy>=1.26,<3",
+  "fastembed>=0.6,<1",
+  "streamlit>=1.42,<2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+foundry-sdk-windows = ["foundry-local-sdk-winml"]
+
+[project.scripts]
+local-learning-coach = "cli:main"
+
+[tool.setuptools]
+packages = {find = {include = ["local_learning_coach*"]}}
+py-modules = ["cli"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+  "integration: çalışan Foundry Local modeli gerektiren testler",
+  "source_docs: kullanıcının üç salt-okunur kaynak belgesini gerektiren testler",
+]
