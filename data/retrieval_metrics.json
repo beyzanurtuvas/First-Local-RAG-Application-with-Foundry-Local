@@ -1,0 +1,12 @@
+{
+  "questions": 42,
+  "positive_questions": 39,
+  "negative_questions": 3,
+  "hit@1": 0.6154,
+  "hit@3": 0.8462,
+  "hit@6": 1.0,
+  "MRR": 0.7547,
+  "correct_document_rate": 0.9487,
+  "negative_false_positive_rate": 0.0,
+  "failures": []
+}
